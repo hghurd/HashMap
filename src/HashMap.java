@@ -3,10 +3,16 @@ import java.util.List;
 
 public class HashMap implements SimpleMap {
 
-    private ArrayList<Entry>[] hashMap = null;
+    private List<Entry>[ ] hashArray = null;
+    private int[] intArray = new int[4];
     private ArrayList<Entry> entryList = new ArrayList<>();
     private Entry entry = null;
     private int size = 0;
+
+    @SuppressWarnings( { "rawtypes", "unused", "unchecked" } )
+    public HashMap ( int capacity ) {
+        hashArray = (List<Entry>[]) new List[capacity];
+    }
 
     @Override
     public Integer get(String key) {
@@ -25,17 +31,17 @@ public class HashMap implements SimpleMap {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return hashArray.length == 0;
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public int capacity() {
-        return 0;
+        return hashArray.length;
     }
 
     @Override
