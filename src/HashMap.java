@@ -1,10 +1,12 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class HashMap implements SimpleMap {
-    @Override
-    public int hashFn(String key) {
-        return 0;
-    }
+
+    private ArrayList<Entry>[] hashMap = null;
+    private ArrayList<Entry> entryList = new ArrayList<>();
+    private Entry entry = null;
+    private int size = 0;
 
     @Override
     public Integer get(String key) {
